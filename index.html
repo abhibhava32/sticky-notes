@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Notes App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1><i class="fa-solid fa-note-sticky"></i> Sticky Notes App</h1>
+            <!-- Menu icon (only visible on small screens) -->
+            <div class="menu-icon" id="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <!-- Button controls (visible on large screens) -->
+            <div class="button-controls">
+                <button id="create-note"><i class="fa-solid fa-plus"></i> Create New Note</button>
+                <button id="export-notes"><i class="fa-solid fa-file-export"></i> Export Notes</button>
+                <input type="file" id="import-notes" accept=".json" style="display: none;">
+                <button><label for="import-notes" class="button"><i class="fa-solid fa-file-import"></i> Import Notes</label></button>
+                <button id="toggle-theme"></button>
+            </div>
+        </header>        
+        <main>
+            <div id="notes-container"></div>
+        </main>
+        <button id="reset-zoom-btn" class="floating-reset-btn" style="display: none;">Reset</button>
+    </div>
+    <!-- Custom Modal -->
+    <div id="custom-modal" class="custom-modal-overlay">
+        <div class="custom-modal-box">
+            <div class="custom-modal-header">
+                <h3 id="custom-modal-title">Confirmation</h3>
+            </div>
+            <div class="custom-modal-body">
+                <p id="custom-modal-message">Are you sure?</p>
+            </div>
+            <div class="custom-modal-footer">
+                <button id="modal-yes-btn" class="custom-modal-btn">Yes</button>
+                <button id="modal-no-btn" class="custom-modal-btn">No</button>
+                <button id="modal-cancel-btn" class="custom-modal-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
