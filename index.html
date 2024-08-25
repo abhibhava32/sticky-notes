@@ -6,17 +6,17 @@
     <title>Sticky Notes App</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr"></script>
+
 </head>
 <body>
     <div id="app">
         <header>
             <h1><i class="fa-solid fa-note-sticky"></i> Sticky Notes App</h1>
-            <!-- Menu icon (only visible on small screens) -->
             <div class="menu-icon" id="menu-toggle">
                 <i class="fa-solid fa-bars"></i>
             </div>
-            <!-- Button controls (visible on large screens) -->
             <div class="button-controls">
                 <button id="create-note"><i class="fa-solid fa-plus"></i> Create New Note</button>
                 <button id="export-notes"><i class="fa-solid fa-file-export"></i> Export Notes</button>
@@ -24,13 +24,19 @@
                 <button><label for="import-notes" class="button"><i class="fa-solid fa-file-import"></i> Import Notes</label></button>
                 <button id="toggle-theme"></button>
             </div>
-        </header>        
+        </header>
+         
         <main>
             <div id="notes-container"></div>
+            </div>
         </main>
-        <button id="reset-zoom-btn" class="floating-reset-btn" style="display: none;">Reset</button>
+        <div class="floating-controls">
+            <button id="reset-zoom-btn" class="floating-reset-btn" style="display: none;">Reset</button>
+            <button id="zoom-in" class="floating-zoom-btn"><i class="fa-solid fa-search-plus"></i></button>
+            <button id="zoom-out" class="floating-zoom-btn"><i class="fa-solid fa-search-minus"></i></button>
+        </div>
     </div>
-    <!-- Custom Modal -->
+
     <div id="custom-modal" class="custom-modal-overlay">
         <div class="custom-modal-box">
             <div class="custom-modal-header">

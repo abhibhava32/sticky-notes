@@ -121,6 +121,8 @@ main {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+
+
 .sticky-note {
     position: absolute;
     width: 200px;
@@ -151,6 +153,9 @@ main {
 }
 
 .sticky-note .title-bar {
+    position: -webkit-sticky; /* for Safari browsers */
+    position: sticky;
+    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -186,6 +191,7 @@ main {
     z-index: 10;
 }
 
+
 /* Resizable container constraints */
 .resizable {
     resize: both;
@@ -212,7 +218,7 @@ main {
     cursor: pointer;
 }
 
-.floating-reset-btn {
+/* .floating-reset-btn {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -223,9 +229,7 @@ main {
     font-size: 16px;
     z-index: 100;
     box-shadow: 0 0px 10px rgba(234, 234, 234, 0.2);
-}
-
-
+} */
 
 /* Modal styles */
 .custom-modal-overlay {
@@ -296,6 +300,41 @@ main {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+
+
+/* Zoom and Reset buttons styles */
+#zoom-controls {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+#zoom-controls button {
+    padding: 5px;
+    border: none;
+    background: #f1c40f;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.floating-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 100;
+    box-shadow: 0 0px 10px rgba(234, 234, 234, 0.2);
+    display: flex;
 }
 
 
