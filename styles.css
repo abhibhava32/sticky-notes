@@ -121,20 +121,18 @@ main {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-
-
 .sticky-note {
     position: absolute;
     width: 200px;
-    height: 150px;
+    /* height: 150px; */
     background-color: yellow;
+    border-radius: 0px 0px 20px 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    /* padding: 10px; */
+    padding: 0px 0px 20px 0px;
     resize: both;
-    overflow: auto;
     cursor:default;
-    min-width: 200px;
-    /* min-height: 100px; */
+    min-width: 255px;
+    min-height: 50px;
 }
 
 .sticky-note .title-menu-items{
@@ -153,9 +151,6 @@ main {
 }
 
 .sticky-note .title-bar {
-    position: -webkit-sticky; /* for Safari browsers */
-    position: sticky;
-    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -175,8 +170,10 @@ main {
 
 .sticky-note .content {
     outline: none;
-    padding: 10px;
+    padding: 10px 10px 0px 10px;
     cursor:text;
+    overflow: auto;
+    height: calc(100% - 50px);
 }
 
 .sticky-note .menu {
@@ -189,24 +186,43 @@ main {
     background-color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 10;
-    right: 0px;
-}
-
-
-/* Resizable container constraints */
-.resizable {
-    resize: both;
-    overflow: hidden;
+    right: 0;
 }
 
 .resizer {
-    width: 10px;
-    height: 10px;
-    background: transparent;
+    width: 12px;
+    height: 12px;
+    background: #666;
     position: absolute;
     right: 0;
     bottom: 0;
     cursor: se-resize;
+}
+
+/* Custom Scrollbar Styles */
+.sticky-note .content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sticky-note .content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sticky-note .content::-webkit-scrollbar-thumb {
+    background-color: rgba(114, 114, 114, 0.9); /* Adjust transparency here */
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box; /* To create padding inside the scrollbar thumb */
+}
+
+.sticky-note .content::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(114, 114, 114, 0.9); /* Slightly less transparent on hover */
+}
+
+/* Firefox Scrollbar */
+.sticky-note .content {
+    scrollbar-width: thick;
+    scrollbar-color: rgba(114, 114, 114, 0.9) transparent;
 }
 
 .sticky-note .menu-dropdown button {
@@ -219,18 +235,20 @@ main {
     cursor: pointer;
 }
 
-/* .floating-reset-btn {
+.floating-controls {
+    display: flex;
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 20px;
+    bottom: 30px;
+    right: 30px;
+    padding: 10px 10px;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+    /* gap: 5px; */
     z-index: 100;
     box-shadow: 0 0px 10px rgba(234, 234, 234, 0.2);
-} */
+}
+
+
 
 /* Modal styles */
 .custom-modal-overlay {
@@ -301,41 +319,6 @@ main {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-
-
-/* Zoom and Reset buttons styles */
-#zoom-controls {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    display: flex;
-    gap: 5px;
-}
-
-#zoom-controls button {
-    padding: 5px;
-    border: none;
-    background: #f1c40f;
-    color: #fff;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-}
-
-.floating-controls {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    z-index: 100;
-    box-shadow: 0 0px 10px rgba(234, 234, 234, 0.2);
-    display: flex;
 }
 
 
